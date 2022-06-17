@@ -7,7 +7,7 @@ They are all digital, and operate at slow speeds.
 
 Rather than try to multiplex all IO, or use tristate buffers, we use scan chain flipflops and latches to first latch in data, and then capture the output.
 
-![block diagram](blockdiagram.png)
+![block diagram](blockdiagram.jpg)
 
 This trace shows loading 8 ins, then capturing 8 outs.
 
