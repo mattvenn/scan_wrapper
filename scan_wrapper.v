@@ -13,13 +13,11 @@ module scan_wrapper (
     output wire data_out
     );
 
-    `ifdef COCOTB_SIM
-        initial begin
-            $dumpfile ("scan_wrapper.vcd");
-            $dumpvars (0, scan_wrapper);
-            #1;
-        end
-    `endif
+    initial begin
+        $dumpfile ("scan_wrapper.vcd");
+        $dumpvars (0, scan_wrapper);
+        #1;
+    end
 
     parameter NUM_IOS = 8;
 
@@ -58,7 +56,7 @@ module scan_wrapper (
     );
 
     // instantiate the user module
-    user_module #(.NUM_IOS(NUM_IOS)) user_module(
+    lesson4 #(.NUM_IOS(NUM_IOS)) user_module(
         .inputs     (module_data_in),
         .outputs    (module_data_out)
     );
