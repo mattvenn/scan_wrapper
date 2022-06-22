@@ -6,7 +6,7 @@ COMPILE_ARGS=-I $(PDK_ROOT)/sky130A/
 include $(shell cocotb-config --makefiles)/Makefile.sim
 export PYTHONPATH := test
 
-all: test_lesson_1 test_lesson_2 test_lesson_3 test_lesson_4
+custom: test_lesson_1 test_lesson_2 test_lesson_3 test_lesson_4
 
 test_lesson_1:
 	rm -rf sim_build/
