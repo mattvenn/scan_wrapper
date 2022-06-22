@@ -1,0 +1,65 @@
+[*]
+[*] GTKWave Analyzer v3.4.0 (w)1999-2022 BSI
+[*] Wed Jun 22 09:43:11 2022
+[*]
+[dumpfile] "/home/matt/work/asic-workshop/100_tapeout/scan_test/scan_wrapper.vcd"
+[dumpfile_mtime] "Wed Jun 22 09:41:38 2022"
+[dumpfile_size] 333187
+[savefile] "/home/matt/work/asic-workshop/100_tapeout/scan_test/scan_wrapper.gtkw"
+[timestart] 13300000
+[size] 2360 1082
+[pos] -1 -1
+*-25.500004 180001000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] scan_wrapper.
+[treeopen] scan_wrapper.scan_flop[0].
+[treeopen] scan_wrapper.scan_flop[7].
+[sst_width] 343
+[signals_width] 680
+[sst_expanded] 1
+[sst_vpaned_height] 324
+@800200
+-scan wrapper
+@28
+scan_wrapper.clk
+scan_wrapper.data_in
+scan_wrapper.data_out
+scan_wrapper.latch_enable
+scan_wrapper.scan_select
+@800023
+scan_wrapper.scan_data_in[7:0]
+@29
+(0)scan_wrapper.scan_data_in[7:0]
+(1)scan_wrapper.scan_data_in[7:0]
+(2)scan_wrapper.scan_data_in[7:0]
+(3)scan_wrapper.scan_data_in[7:0]
+(4)scan_wrapper.scan_data_in[7:0]
+(5)scan_wrapper.scan_data_in[7:0]
+(6)scan_wrapper.scan_data_in[7:0]
+(7)scan_wrapper.scan_data_in[7:0]
+@1001201
+-group_end
+@1000200
+-scan wrapper
+@22
+scan_wrapper.user_module.outputs[7:0]
+@800022
+scan_wrapper.user_module.inputs[7:0]
+@28
+(0)scan_wrapper.user_module.inputs[7:0]
+(1)scan_wrapper.user_module.inputs[7:0]
+(2)scan_wrapper.user_module.inputs[7:0]
+(3)scan_wrapper.user_module.inputs[7:0]
+(4)scan_wrapper.user_module.inputs[7:0]
+(5)scan_wrapper.user_module.inputs[7:0]
+(6)scan_wrapper.user_module.inputs[7:0]
+(7)scan_wrapper.user_module.inputs[7:0]
+@1001200
+-group_end
+@22
+scan_wrapper.user_module.outputs[7:0]
+scan_wrapper.user_module.count[7:0]
+@28
+scan_wrapper.user_module.reset
+scan_wrapper.user_module.clk
+[pattern_trace] 1
+[pattern_trace] 0
