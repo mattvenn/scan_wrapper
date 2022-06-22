@@ -1,9 +1,11 @@
 `default_nettype none
-//`define UNIT_DELAY #1
-//`define FUNCTIONAL
-//`define USE_POWER_PINS
-//`include "libs.ref/sky130_fd_sc_hd/verilog/primitives.v"
-//`include "libs.ref/sky130_fd_sc_hd/verilog/sky130_fd_sc_hd.v"
+`ifdef COCOTB
+`define UNIT_DELAY #1
+`define FUNCTIONAL
+`define USE_POWER_PINS
+`include "libs.ref/sky130_fd_sc_hd/verilog/primitives.v"
+`include "libs.ref/sky130_fd_sc_hd/verilog/sky130_fd_sc_hd.v"
+`endif
 
 module scan_wrapper_lesson_1 (
     input wire clk,
@@ -13,11 +15,13 @@ module scan_wrapper_lesson_1 (
     output wire data_out
     );
 
+    `ifdef COCOTB
     initial begin
         $dumpfile ("scan_wrapper.vcd");
-        $dumpvars (0, scan_wrapper);
+        $dumpvars (0, scan_wrapper_lesson_1);
         #1;
     end
+    `endif
 
     parameter NUM_IOS = 8;
 
@@ -71,11 +75,13 @@ module scan_wrapper_lesson_2 (
     output wire data_out
     );
 
+    `ifdef COCOTB
     initial begin
         $dumpfile ("scan_wrapper.vcd");
-        $dumpvars (0, scan_wrapper);
+        $dumpvars (0, scan_wrapper_lesson_2);
         #1;
     end
+    `endif
 
     parameter NUM_IOS = 8;
 
@@ -129,11 +135,13 @@ module scan_wrapper_lesson_3 (
     output wire data_out
     );
 
+    `ifdef COCOTB
     initial begin
         $dumpfile ("scan_wrapper.vcd");
-        $dumpvars (0, scan_wrapper);
+        $dumpvars (0, scan_wrapper_lesson_3);
         #1;
     end
+    `endif
 
     parameter NUM_IOS = 8;
 
@@ -187,11 +195,13 @@ module scan_wrapper_lesson_4 (
     output wire data_out
     );
 
+    `ifdef COCOTB
     initial begin
         $dumpfile ("scan_wrapper.vcd");
-        $dumpvars (0, scan_wrapper);
+        $dumpvars (0, scan_wrapper_lesson_4);
         #1;
     end
+    `endif
 
     parameter NUM_IOS = 8;
 
