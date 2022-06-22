@@ -40,6 +40,7 @@ module scan_wrapper_lesson_1 (
     // scan flops have a mux on their inputs to choose either data from the user module or the previous flop's output
     // https://antmicro-skywater-pdk-docs.readthedocs.io/en/test-submodules-in-rtd/contents/libraries/sky130_fd_sc_ls/cells/sdfxtp/README.html
     `ifndef FORMAL
+    `ifndef FORMAL_COMPAT
     sky130_fd_sc_hd__sdfxtp_1 scan_flop [NUM_IOS-1:0] (
         .CLK        (clk), 
         .D          (module_data_out),
@@ -49,11 +50,9 @@ module scan_wrapper_lesson_1 (
         .VPWR       (1'b1),
         .VGND       (1'b0)
     );
-    `endif
 
     // latch is used to latch the input data of the user module while the scan chain is used to capture the user module's outputs
     // https://antmicro-skywater-pdk-docs.readthedocs.io/en/test-submodules-in-rtd/contents/libraries/sky130_fd_sc_hd/cells/dlxtp/README.html
-    `ifndef FORMAL
     sky130_fd_sc_hd__dlxtp_1 latch [NUM_IOS-1:0] (
         .D          (scan_data_out),
         .GATE       (latch_enable),
@@ -61,6 +60,7 @@ module scan_wrapper_lesson_1 (
         .VPWR       (1'b1),
         .VGND       (1'b0)
     );
+    `endif
     `endif
 
     // instantiate the user module
@@ -104,6 +104,7 @@ module scan_wrapper_lesson_2 (
     // scan flops have a mux on their inputs to choose either data from the user module or the previous flop's output
     // https://antmicro-skywater-pdk-docs.readthedocs.io/en/test-submodules-in-rtd/contents/libraries/sky130_fd_sc_ls/cells/sdfxtp/README.html
     `ifndef FORMAL
+    `ifndef FORMAL_COMPAT
     sky130_fd_sc_hd__sdfxtp_1 scan_flop [NUM_IOS-1:0] (
         .CLK        (clk), 
         .D          (module_data_out),
@@ -113,11 +114,9 @@ module scan_wrapper_lesson_2 (
         .VPWR       (1'b1),
         .VGND       (1'b0)
     );
-    `endif
 
     // latch is used to latch the input data of the user module while the scan chain is used to capture the user module's outputs
     // https://antmicro-skywater-pdk-docs.readthedocs.io/en/test-submodules-in-rtd/contents/libraries/sky130_fd_sc_hd/cells/dlxtp/README.html
-    `ifndef FORMAL
     sky130_fd_sc_hd__dlxtp_1 latch [NUM_IOS-1:0] (
         .D          (scan_data_out),
         .GATE       (latch_enable),
@@ -125,6 +124,7 @@ module scan_wrapper_lesson_2 (
         .VPWR       (1'b1),
         .VGND       (1'b0)
     );
+    `endif
     `endif
 
     // instantiate the user module
@@ -168,6 +168,7 @@ module scan_wrapper_lesson_3 (
     // scan flops have a mux on their inputs to choose either data from the user module or the previous flop's output
     // https://antmicro-skywater-pdk-docs.readthedocs.io/en/test-submodules-in-rtd/contents/libraries/sky130_fd_sc_ls/cells/sdfxtp/README.html
     `ifndef FORMAL
+    `ifndef FORMAL_COMPAT
     sky130_fd_sc_hd__sdfxtp_1 scan_flop [NUM_IOS-1:0] (
         .CLK        (clk), 
         .D          (module_data_out),
@@ -177,11 +178,9 @@ module scan_wrapper_lesson_3 (
         .VPWR       (1'b1),
         .VGND       (1'b0)
     );
-    `endif
 
     // latch is used to latch the input data of the user module while the scan chain is used to capture the user module's outputs
     // https://antmicro-skywater-pdk-docs.readthedocs.io/en/test-submodules-in-rtd/contents/libraries/sky130_fd_sc_hd/cells/dlxtp/README.html
-    `ifndef FORMAL
     sky130_fd_sc_hd__dlxtp_1 latch [NUM_IOS-1:0] (
         .D          (scan_data_out),
         .GATE       (latch_enable),
@@ -189,6 +188,7 @@ module scan_wrapper_lesson_3 (
         .VPWR       (1'b1),
         .VGND       (1'b0)
     );
+    `endif
     `endif
 
     // instantiate the user module
@@ -232,6 +232,7 @@ module scan_wrapper_lesson_4 (
     // scan flops have a mux on their inputs to choose either data from the user module or the previous flop's output
     // https://antmicro-skywater-pdk-docs.readthedocs.io/en/test-submodules-in-rtd/contents/libraries/sky130_fd_sc_ls/cells/sdfxtp/README.html
     `ifndef FORMAL
+    `ifndef FORMAL_COMPAT
     sky130_fd_sc_hd__sdfxtp_1 scan_flop [NUM_IOS-1:0] (
         .CLK        (clk), 
         .D          (module_data_out),
@@ -241,11 +242,9 @@ module scan_wrapper_lesson_4 (
         .VPWR       (1'b1),
         .VGND       (1'b0)
     );
-    `endif
 
     // latch is used to latch the input data of the user module while the scan chain is used to capture the user module's outputs
     // https://antmicro-skywater-pdk-docs.readthedocs.io/en/test-submodules-in-rtd/contents/libraries/sky130_fd_sc_hd/cells/dlxtp/README.html
-    `ifndef FORMAL
     sky130_fd_sc_hd__dlxtp_1 latch [NUM_IOS-1:0] (
         .D          (scan_data_out),
         .GATE       (latch_enable),
@@ -253,6 +252,7 @@ module scan_wrapper_lesson_4 (
         .VPWR       (1'b1),
         .VGND       (1'b0)
     );
+    `endif
     `endif
 
     // instantiate the user module
