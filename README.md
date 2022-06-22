@@ -12,3 +12,10 @@ Rather than try to multiplex all IO, or use tristate buffers, we use scan chain 
 This trace shows loading 8 ins, then capturing 8 outs.
 
 ![trace](trace.png)
+
+# logs
+
+How to test this on ASIC? 
+
+* with multi tools everything expects tristate
+* these will need to be instantiated by hand

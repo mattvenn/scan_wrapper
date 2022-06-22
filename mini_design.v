@@ -5,7 +5,7 @@ module lesson1(
     input wire [NUM_IOS-1:0] inputs,
     output wire [NUM_IOS-1:0] outputs
 );
-    parameter NUM_IOS = 1;
+    parameter NUM_IOS = 8;
 
     // lesson 1 - combinational
     // 22 cells
@@ -20,7 +20,7 @@ module lesson2(
     input wire [NUM_IOS-1:0] inputs,
     output wire [NUM_IOS-1:0] outputs
 );
-    parameter NUM_IOS = 1;
+    parameter NUM_IOS = 8;
 
     // counter
     // 50 cells
@@ -28,7 +28,6 @@ module lesson2(
     wire clk = inputs[0];
     wire reset = inputs[1];
     assign outputs = count;
-    // TODO something weird going on with latching, so reset is actually low on the clock edge
     always @(posedge clk) begin
         if(reset)
             count <= 0;
@@ -42,7 +41,7 @@ module lesson3(
     input wire [NUM_IOS-1:0] inputs,
     output wire [NUM_IOS-1:0] outputs
 );
-    parameter NUM_IOS = 1;
+    parameter NUM_IOS = 8;
 
 
     // counter and output
@@ -73,7 +72,7 @@ module lesson4(
     input wire [NUM_IOS-1:0] inputs,
     output wire [NUM_IOS-1:0] outputs
 );
-    parameter NUM_IOS = 1;
+    parameter NUM_IOS = 8;
 
     /*
     cells: 49
