@@ -36,6 +36,19 @@ test_lesson_4:
 	MODULE=test.test_lesson_4 vvp -M $$(cocotb-config --prefix)/cocotb/libs -m libcocotbvpi_icarus sim_build/sim.vvp
 	! grep failure results.xml
 
+# needs PDK_ROOT and OPENLANE_ROOT set from your environment
+OPENLANE_TAG ?= 2021.11.23_01.42.34
+OPENLANE_IMAGE_NAME ?= efabless/openlane:$(OPENLANE_TAG)
+harden:
+	docker run --rm \
+	-v $(OPENLANE_ROOT):/openlane \
+	-v $(PDK_ROOT):$(PDK_ROOT) \
+	-v $(CURDIR):/work \
+	-e PDK_ROOT=$(PDK_ROOT) \
+	-u $(shell id -u $(USER)):$(shell id -g $(USER)) \
+	$(OPENLANE_IMAGE_NAME) \
+	/bin/bash -c "./flow.tcl -overwrite -design /work/ -run_path /work/runs -tag adder"
+
 clean::
 	rm -rf *vcd sim_build test/__pycache__
 
