@@ -47,7 +47,7 @@ harden:
 	-e PDK_ROOT=$(PDK_ROOT) \
 	-u $(shell id -u $(USER)):$(shell id -g $(USER)) \
 	$(OPENLANE_IMAGE_NAME) \
-	/bin/bash -c "./flow.tcl -overwrite -design /work/ -run_path /work/runs -tag adder"
+	/bin/bash -c "./flow.tcl -overwrite -design /work/ -run_path /work/runs -tag scan"
 
 clean::
 	rm -rf *vcd sim_build test/__pycache__
