@@ -48,7 +48,7 @@ module top(
         .latch_enable_out(latch[0])
         );
 
-    scan_wrapper_lesson_1 #(.NUM_IOS(8)) instance_1 (
+    scan_wrapper_lesson_2 #(.NUM_IOS(8)) instance_1 (
         .clk_in          (cclk [0]),
         .data_in         (data [0]),
         .scan_select_in  (scan [0]),
@@ -59,7 +59,7 @@ module top(
         .latch_enable_out(latch[1])
         );
 
-    scan_wrapper_lesson_1 #(.NUM_IOS(8)) instance_2 (
+    scan_wrapper_lesson_3 #(.NUM_IOS(8)) instance_2 (
         .clk_in          (cclk  [1]),
         .data_in         (data [1]),
         .scan_select_in  (scan [1]),
@@ -70,7 +70,7 @@ module top(
         .latch_enable_out(latch[2])
         );
 
-    scan_wrapper_lesson_1 #(.NUM_IOS(8)) instance_3 (
+    scan_wrapper_lesson_4 #(.NUM_IOS(8)) instance_3 (
         .clk_in          (cclk  [2]),
         .data_in         (data [2]),
         .scan_select_in  (scan [2]),

@@ -80,17 +80,20 @@ module scan_wrapper_lesson_1 (
 endmodule
 
 module scan_wrapper_lesson_2 (
-    input wire clk,
+    input wire clk_in,
     input wire data_in,
     input wire scan_select_in,
     input wire latch_enable_in,
+    output wire clk_out,
     output wire data_out,
     output wire scan_select_out,
     output wire latch_enable_out
     );
     
     assign scan_select_out = scan_select_in;
-    assign latch_enable_out = latch_enable_out;
+    assign latch_enable_out = latch_enable_in;
+    assign clk_out = clk_in;
+    wire clk = clk_in;
 
     `ifdef COCOTB
     initial begin
@@ -149,17 +152,20 @@ module scan_wrapper_lesson_2 (
 endmodule
 
 module scan_wrapper_lesson_3 (
-    input wire clk,
+    input wire clk_in,
     input wire data_in,
     input wire scan_select_in,
     input wire latch_enable_in,
+    output wire clk_out,
     output wire data_out,
     output wire scan_select_out,
     output wire latch_enable_out
     );
     
     assign scan_select_out = scan_select_in;
-    assign latch_enable_out = latch_enable_out;
+    assign latch_enable_out = latch_enable_in;
+    assign clk_out = clk_in;
+    wire clk = clk_in;
 
     `ifdef COCOTB
     initial begin
@@ -218,17 +224,20 @@ module scan_wrapper_lesson_3 (
 endmodule
 
 module scan_wrapper_lesson_4 (
-    input wire clk,
+    input wire clk_in,
     input wire data_in,
     input wire scan_select_in,
     input wire latch_enable_in,
+    output wire clk_out,
     output wire data_out,
     output wire scan_select_out,
     output wire latch_enable_out
     );
     
     assign scan_select_out = scan_select_in;
-    assign latch_enable_out = latch_enable_out;
+    assign latch_enable_out = latch_enable_in;
+    assign clk_out = clk_in;
+    wire clk = clk_in;
 
     `ifdef COCOTB
     initial begin

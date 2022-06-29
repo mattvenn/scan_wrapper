@@ -29,6 +29,7 @@ module scan_controller (
                     
 
     reg [8:0] current_design;
+    wire [8:0] active_select_rev = NUM_DESIGNS - 1 - active_select;
     reg [2:0] state;
     reg [3:0] num_io;
     reg scan_clk_r;
@@ -41,15 +42,13 @@ module scan_controller (
 
     assign outputs = outputs_r;
     
-    assign ready = start_load;
-
-    wire start_load = state == LOAD && current_design == 0;
-    wire start_read = state == READ && current_design == 0;
+    assign ready = state == START;
 
     assign scan_latch_enable = state == LATCH;
     assign scan_clk = scan_clk_r;
-    assign scan_data_out = (state == LOAD && current_design == active_select ) ? inputs_r[NUM_IOS-1-num_io] : 0;
+    assign scan_data_out = (state == LOAD && current_design == active_select_rev ) ? inputs_r[NUM_IOS-1-num_io] : 0;
     assign scan_select = scan_select_out_r;
+
 
     /*
 
@@ -123,7 +122,7 @@ module scan_controller (
                     scan_clk_r <= ~scan_clk_r;
                     if(scan_clk_r) begin
                         num_io <= num_io + 1;
-                        if(current_design == active_select)
+                        if(current_design == active_select_rev)
                             output_buf[NUM_IOS-1-num_io] <= scan_data_in;
 
                         if(num_io == NUM_IOS - 1) begin

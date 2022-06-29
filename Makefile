@@ -12,7 +12,7 @@ test_scan_controller:
 	rm -rf sim_build/
 	mkdir sim_build/
 	iverilog -DCOCOTB -o sim_build/sim.vvp -s top  -g2012 top.v scan_controller.v scan_wrapper.v mini_design.v -I $(PDK_ROOT)/sky130A/ 
-	MODULE=test.test_scan_controller vvp -M $$(cocotb-config --prefix)/cocotb/libs -m libcocotbvpi_icarus sim_build/sim.vvp
+	MODULE=test.test_scan_controller  vvp -M $$(cocotb-config --prefix)/cocotb/libs -m libcocotbvpi_icarus sim_build/sim.vvp
 	! grep failure results.xml
 
 test_lesson_1:
