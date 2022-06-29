@@ -19,7 +19,7 @@ module scan_wrapper_lesson_1 (
     );
     
     assign scan_select_out = scan_select_in;
-    assign latch_enable_out = latch_enable_out;
+    assign latch_enable_out = latch_enable_in;
     assign clk_out = clk_in;
     wire clk = clk_in;
 

@@ -1,0 +1,108 @@
+[*]
+[*] GTKWave Analyzer v3.4.0 (w)1999-2022 BSI
+[*] Wed Jun 29 13:12:19 2022
+[*]
+[dumpfile] "/home/matt/work/asic-workshop/shuttle6/wrapped_scan_test/scan_test/scan_wrapper.vcd"
+[dumpfile_mtime] "Wed Jun 29 13:11:31 2022"
+[dumpfile_size] 139249
+[savefile] "/home/matt/work/asic-workshop/shuttle6/wrapped_scan_test/scan_test/scan_controller.gtkw"
+[timestart] 385100000
+[size] 1944 1187
+[pos] -1 -1
+*-26.700001 650000000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] top.
+[treeopen] top.instance_0.
+[sst_width] 343
+[signals_width] 528
+[sst_expanded] 1
+[sst_vpaned_height] 359
+@28
+top.scan_controller.clk
+top.scan_controller.reset
+@22
+top.scan_controller.active_select[8:0]
+top.scan_controller.inputs[7:0]
+top.scan_controller.outputs[7:0]
+@28
+top.scan_controller.ready
+@800200
+-scan chain
+@28
+top.scan_controller.scan_clk
+top.scan_controller.scan_data_in
+top.scan_controller.scan_data_out
+top.scan_controller.scan_latch_enable
+top.scan_controller.scan_select
+@1000200
+-scan chain
+@8024
+top.scan_controller.current_design[8:0]
+@28
+top.scan_controller.start_load
+top.scan_controller.start_read
+@22
+top.scan_controller.num_io[3:0]
+@800023
+top.scan_controller.output_buf[7:0]
+@29
+(0)top.scan_controller.output_buf[7:0]
+(1)top.scan_controller.output_buf[7:0]
+(2)top.scan_controller.output_buf[7:0]
+(3)top.scan_controller.output_buf[7:0]
+(4)top.scan_controller.output_buf[7:0]
+(5)top.scan_controller.output_buf[7:0]
+(6)top.scan_controller.output_buf[7:0]
+(7)top.scan_controller.output_buf[7:0]
+@1001201
+-group_end
+@800200
+-instance0
+@28
+top.instance_0.clk
+top.instance_0.data_in
+top.instance_0.data_out
+top.instance_0.latch_enable_in
+@22
+top.instance_0.module_data_in[7:0]
+top.instance_0.module_data_out[7:0]
+@800022
+top.instance_0.scan_data_in[7:0]
+@28
+(0)top.instance_0.scan_data_in[7:0]
+(1)top.instance_0.scan_data_in[7:0]
+(2)top.instance_0.scan_data_in[7:0]
+(3)top.instance_0.scan_data_in[7:0]
+(4)top.instance_0.scan_data_in[7:0]
+(5)top.instance_0.scan_data_in[7:0]
+(6)top.instance_0.scan_data_in[7:0]
+(7)top.instance_0.scan_data_in[7:0]
+@1001200
+-group_end
+@22
+top.instance_0.scan_data_out[7:0]
+@28
+top.instance_0.scan_select_in
+@1000200
+-instance0
+@c00200
+-instance3
+@28
+top.instance_3.clk
+top.instance_3.clk_in
+top.instance_3.clk_out
+top.instance_3.data_in
+top.instance_3.data_out
+top.instance_3.latch_enable_in
+top.instance_3.latch_enable_out
+@22
+top.instance_3.module_data_in[7:0]
+top.instance_3.module_data_out[7:0]
+top.instance_3.scan_data_in[7:0]
+top.instance_3.scan_data_out[7:0]
+@28
+top.instance_3.scan_select_in
+top.instance_3.scan_select_out
+@1401200
+-instance3
+[pattern_trace] 1
+[pattern_trace] 0
