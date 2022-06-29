@@ -8,12 +8,20 @@
 `endif
 
 module scan_wrapper_lesson_1 (
-    input wire clk,
+    input wire clk_in,
     input wire data_in,
-    input wire scan_select,
-    input wire latch_enable,
-    output wire data_out
+    input wire scan_select_in,
+    input wire latch_enable_in,
+    output wire clk_out,
+    output wire data_out,
+    output wire scan_select_out,
+    output wire latch_enable_out
     );
+    
+    assign scan_select_out = scan_select_in;
+    assign latch_enable_out = latch_enable_out;
+    assign clk_out = clk_in;
+    wire clk = clk_in;
 
     `ifdef COCOTB
     initial begin
@@ -45,7 +53,7 @@ module scan_wrapper_lesson_1 (
         .CLK        (clk), 
         .D          (module_data_out),
         .SCD        (scan_data_in),
-        .SCE        (scan_select),
+        .SCE        (scan_select_in),
         .Q          (scan_data_out),
         .VPWR       (1'b1),
         .VGND       (1'b0)
@@ -55,7 +63,7 @@ module scan_wrapper_lesson_1 (
     // https://antmicro-skywater-pdk-docs.readthedocs.io/en/test-submodules-in-rtd/contents/libraries/sky130_fd_sc_hd/cells/dlxtp/README.html
     sky130_fd_sc_hd__dlxtp_1 latch [NUM_IOS-1:0] (
         .D          (scan_data_out),
-        .GATE       (latch_enable),
+        .GATE       (latch_enable_in),
         .Q          (module_data_in),
         .VPWR       (1'b1),
         .VGND       (1'b0)
@@ -74,10 +82,15 @@ endmodule
 module scan_wrapper_lesson_2 (
     input wire clk,
     input wire data_in,
-    input wire scan_select,
-    input wire latch_enable,
-    output wire data_out
+    input wire scan_select_in,
+    input wire latch_enable_in,
+    output wire data_out,
+    output wire scan_select_out,
+    output wire latch_enable_out
     );
+    
+    assign scan_select_out = scan_select_in;
+    assign latch_enable_out = latch_enable_out;
 
     `ifdef COCOTB
     initial begin
@@ -109,7 +122,7 @@ module scan_wrapper_lesson_2 (
         .CLK        (clk), 
         .D          (module_data_out),
         .SCD        (scan_data_in),
-        .SCE        (scan_select),
+        .SCE        (scan_select_in),
         .Q          (scan_data_out),
         .VPWR       (1'b1),
         .VGND       (1'b0)
@@ -119,7 +132,7 @@ module scan_wrapper_lesson_2 (
     // https://antmicro-skywater-pdk-docs.readthedocs.io/en/test-submodules-in-rtd/contents/libraries/sky130_fd_sc_hd/cells/dlxtp/README.html
     sky130_fd_sc_hd__dlxtp_1 latch [NUM_IOS-1:0] (
         .D          (scan_data_out),
-        .GATE       (latch_enable),
+        .GATE       (latch_enable_in),
         .Q          (module_data_in),
         .VPWR       (1'b1),
         .VGND       (1'b0)
@@ -138,10 +151,15 @@ endmodule
 module scan_wrapper_lesson_3 (
     input wire clk,
     input wire data_in,
-    input wire scan_select,
-    input wire latch_enable,
-    output wire data_out
+    input wire scan_select_in,
+    input wire latch_enable_in,
+    output wire data_out,
+    output wire scan_select_out,
+    output wire latch_enable_out
     );
+    
+    assign scan_select_out = scan_select_in;
+    assign latch_enable_out = latch_enable_out;
 
     `ifdef COCOTB
     initial begin
@@ -173,7 +191,7 @@ module scan_wrapper_lesson_3 (
         .CLK        (clk), 
         .D          (module_data_out),
         .SCD        (scan_data_in),
-        .SCE        (scan_select),
+        .SCE        (scan_select_in),
         .Q          (scan_data_out),
         .VPWR       (1'b1),
         .VGND       (1'b0)
@@ -183,7 +201,7 @@ module scan_wrapper_lesson_3 (
     // https://antmicro-skywater-pdk-docs.readthedocs.io/en/test-submodules-in-rtd/contents/libraries/sky130_fd_sc_hd/cells/dlxtp/README.html
     sky130_fd_sc_hd__dlxtp_1 latch [NUM_IOS-1:0] (
         .D          (scan_data_out),
-        .GATE       (latch_enable),
+        .GATE       (latch_enable_in),
         .Q          (module_data_in),
         .VPWR       (1'b1),
         .VGND       (1'b0)
@@ -202,10 +220,15 @@ endmodule
 module scan_wrapper_lesson_4 (
     input wire clk,
     input wire data_in,
-    input wire scan_select,
-    input wire latch_enable,
-    output wire data_out
+    input wire scan_select_in,
+    input wire latch_enable_in,
+    output wire data_out,
+    output wire scan_select_out,
+    output wire latch_enable_out
     );
+    
+    assign scan_select_out = scan_select_in;
+    assign latch_enable_out = latch_enable_out;
 
     `ifdef COCOTB
     initial begin
@@ -237,7 +260,7 @@ module scan_wrapper_lesson_4 (
         .CLK        (clk), 
         .D          (module_data_out),
         .SCD        (scan_data_in),
-        .SCE        (scan_select),
+        .SCE        (scan_select_in),
         .Q          (scan_data_out),
         .VPWR       (1'b1),
         .VGND       (1'b0)
@@ -247,7 +270,7 @@ module scan_wrapper_lesson_4 (
     // https://antmicro-skywater-pdk-docs.readthedocs.io/en/test-submodules-in-rtd/contents/libraries/sky130_fd_sc_hd/cells/dlxtp/README.html
     sky130_fd_sc_hd__dlxtp_1 latch [NUM_IOS-1:0] (
         .D          (scan_data_out),
-        .GATE       (latch_enable),
+        .GATE       (latch_enable_in),
         .Q          (module_data_in),
         .VPWR       (1'b1),
         .VGND       (1'b0)
