@@ -23,7 +23,7 @@ set ::env(FP_CORE_UTIL) 45
 set ::env(PL_RESIZER_BUFFER_OUTPUT_PORTS) 0
 
 # set absolute size of the die to 300 x 300 um
-set ::env(DIE_AREA) "0 0 70 70"
+set ::env(DIE_AREA) "0 0 100 100"
 set ::env(FP_SIZING) absolute
 
 # clock period is ns
