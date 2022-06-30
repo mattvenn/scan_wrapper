@@ -17,7 +17,7 @@ module scan_controller (
     output wire scan_latch_enable
     );
 
-    parameter NUM_DESIGNS = 4; 
+    parameter NUM_DESIGNS = 8; 
     parameter NUM_IOS     = 8;
 
     localparam START = 0;

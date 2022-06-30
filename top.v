@@ -18,7 +18,7 @@ module top(
     end
     `endif
 
-    scan_controller scan_controller(
+    scan_controller #(.NUM_DESIGNS(NUM_MACROS)) scan_controller(
         .clk            (clk),
         .reset          (reset),
         .active_select  (active_select),
@@ -32,7 +32,10 @@ module top(
         .scan_latch_enable(scan_latch_enable)
     );
 
-    localparam NUM_MACROS = 4;
+    localparam NUM_MACROS = 100;
+    localparam NUM_LESSONS = 4;
+    localparam EXTRA_MACRO = NUM_MACROS - NUM_LESSONS;
+
     wire [NUM_MACROS:0] data, scan, latch, cclk;
     wire scan_clk, scan_data_out, scan_data_in, scan_select, scan_latch_enable;
     assign scan_data_in = data[NUM_MACROS-1];
@@ -80,5 +83,18 @@ module top(
         .scan_select_out (scan [3]),
         .latch_enable_out(latch[3])
         );
+
+
+    scan_wrapper_lesson_1 #(.NUM_IOS(8)) extra_scan_wrappers [EXTRA_MACRO-1:0] (
+        .clk_in          (cclk [NUM_MACROS-2:NUM_LESSONS-1]),
+        .data_in         (data [NUM_MACROS-2:NUM_LESSONS-1]),
+        .scan_select_in  (scan [NUM_MACROS-2:NUM_LESSONS-1]),
+        .latch_enable_in (latch[NUM_MACROS-2:NUM_LESSONS-1]),
+        .clk_out         (cclk [NUM_MACROS-1:NUM_LESSONS]),
+        .data_out        (data [NUM_MACROS-1:NUM_LESSONS]),
+        .scan_select_out (scan [NUM_MACROS-1:NUM_LESSONS]),
+        .latch_enable_out(latch[NUM_MACROS-1:NUM_LESSONS])
+        );
+    
 
 endmodule

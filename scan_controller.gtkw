@@ -1,15 +1,15 @@
 [*]
 [*] GTKWave Analyzer v3.4.0 (w)1999-2022 BSI
-[*] Wed Jun 29 15:15:46 2022
+[*] Wed Jun 29 15:39:11 2022
 [*]
 [dumpfile] "/home/matt/work/asic-workshop/shuttle6/wrapped_scan_test/scan_test/scan_wrapper.vcd"
-[dumpfile_mtime] "Wed Jun 29 15:15:16 2022"
-[dumpfile_size] 9653065
+[dumpfile_mtime] "Wed Jun 29 15:39:11 2022"
+[dumpfile_size] 856469504
 [savefile] "/home/matt/work/asic-workshop/shuttle6/wrapped_scan_test/scan_test/scan_controller.gtkw"
 [timestart] 0
 [size] 1944 1187
-[pos] -1 -1
-*-37.800003 24020000000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[pos] 19 -2
+*-40.500000 864540000001 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
 [treeopen] top.
 [treeopen] top.instance_0.
 [treeopen] top.instance_2.
@@ -69,8 +69,6 @@ top.scan_controller.scan_select
 @8024
 top.scan_controller.current_design[8:0]
 @28
-top.scan_controller.start_load
-top.scan_controller.start_read
 top.scan_controller.scan_data_in
 @22
 top.scan_controller.num_io[3:0]

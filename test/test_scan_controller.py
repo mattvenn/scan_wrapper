@@ -3,6 +3,8 @@ from cocotb.clock import Clock
 from cocotb.triggers import RisingEdge, FallingEdge, ClockCycles
 from scan_wrapper import *
 
+NUM_DESIGNS = 100
+
 # utility functions. using 2nd bit as reset and 1st bit as clock for synchronous design examples
 async def reset(dut):
     await RisingEdge(dut.ready);
@@ -57,9 +59,15 @@ async def test_lesson_2(dut):
     # wait one clock cycle to sync
     await single_cycle(dut)
 
-    for i in range(255):
-        assert dut.outputs.value == i
-        await single_cycle(dut)
+    # just check first 10 as 255 is very slow with a long chain
+    if NUM_DESIGNS > 10:
+        for i in range(10):
+            assert dut.outputs.value == i
+            await single_cycle(dut)
+    else:
+        for i in range(255):
+            assert dut.outputs.value == i
+            await single_cycle(dut)
 
 @cocotb.test()
 async def test_lesson_3(dut):
@@ -98,3 +106,30 @@ async def test_lesson_4(dut):
         await single_cycle(dut)
         assert dut.outputs[0] == int(char)
 
+@cocotb.test()
+async def test_extra_lesson_1(dut):
+    clock = Clock(dut.clk, 10, units="us")
+    cocotb.fork(clock.start())
+
+    # check every 10th of the rest of the designs (default to 1st lesson design)
+    for i in range(4,NUM_DESIGNS, 10):
+        print(i)
+        dut.reset = 1
+        dut.active_select = i
+        await ClockCycles(dut.clk, 1)
+        dut.reset = 0
+
+        dut.inputs = 0x00
+        await RisingEdge(dut.ready);
+        await RisingEdge(dut.ready);
+        assert dut.outputs == 0x00
+
+        dut.inputs = 0x01
+        await RisingEdge(dut.ready);
+        await RisingEdge(dut.ready);
+        assert dut.outputs == 0xAA
+
+        dut.inputs = 0x02
+        await RisingEdge(dut.ready);
+        await RisingEdge(dut.ready);
+        assert dut.outputs == 0x55
