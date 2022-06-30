@@ -7,7 +7,7 @@ They are all digital, and operate at slow speeds.
 
 Rather than try to multiplex all IO, or use tristate buffers, we use scan chain flipflops and latches to first latch in data, and then capture the output.
 
-![block diagram](blockdiagram.jpg)
+![block diagram](block_diagram.png)
 
 This trace shows loading 8 ins, then capturing 8 outs.
 
@@ -47,3 +47,4 @@ How to test this on ASIC?
 
 * with multi tools everything expects tristate
 * these will need to be instantiated by hand
+
