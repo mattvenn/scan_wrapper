@@ -15,6 +15,15 @@ This trace shows loading 8 ins, then capturing 8 outs.
 
 # logs
 
+# Thu 30 Jun 15:34:41 CEST 2022
+
+* scan controller is working with the tests, hardens to 230 x 100 which fits nicely in the corner taking 2 tiles
+* things to decide:
+    * single step
+    * how to control clock freq
+    * clock as separate port?
+    * reset?
+
 # Wed 29 Jun 13:00:45 CEST 2022
 
 * 25x20 100x100u designs working DRC & LVS clean: 0c387847a1fe9829cdce3d334447f078c92dd8a9
