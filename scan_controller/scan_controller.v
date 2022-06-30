@@ -14,8 +14,13 @@ module scan_controller (
     output wire scan_data_out,
     input wire  scan_data_in,
     output wire scan_select,
-    output wire scan_latch_enable
+    output wire scan_latch_enable,
+
+    // caravel oeb stuff
+    output wire [8:0] oeb
     );
+
+    assign oeb = 8'b0;
 
     parameter NUM_DESIGNS = 8; 
     parameter NUM_IOS     = 8;
@@ -26,7 +31,6 @@ module scan_controller (
     localparam CAPTURE_STATE = 3;
     localparam LATCH = 4;
                     
-                    
 
     reg [8:0] current_design;
     wire [8:0] active_select_rev = NUM_DESIGNS - 1 - active_select;
@@ -34,7 +38,6 @@ module scan_controller (
     reg [3:0] num_io;
     reg scan_clk_r;
     reg scan_select_out_r;
-
 
     reg [7:0] inputs_r;
     reg [7:0] outputs_r;
@@ -69,10 +72,10 @@ module scan_controller (
     
     read outputs
     ============
-    scan sel  = 1
+    scan sel  = 1 0 1
     latch en  = 0
-    clk       = 0 1 0 ..
-    data out  = x x x ..
+    clk       = 0 1 0 1 0 1 ..
+    data out  = . . . x x x ..
 
     */
 
