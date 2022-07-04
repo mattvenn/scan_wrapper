@@ -1,0 +1,13 @@
+{signal: [
+  {name: 'clk', wave: 'p.....'},
+  {name: 'scan en', wave: '010...'},
+  {name: 'latch', wave: '0.....'},
+  {name: 'data o', wave: 'x.....'},
+  {name: 'data i', wave: '0.1010'},
+],
+head:{
+   text:'Read outputs 1010',
+   tick:0,
+   every:1
+ }}
+

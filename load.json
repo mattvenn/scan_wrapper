@@ -1,0 +1,14 @@
+{signal: [
+  {name: 'clk', wave: 'p...l.'},
+  {name: 'scan en', wave: '0.....'},
+  {name: 'latch', wave: '0...10'},
+  {name: 'data o', wave: '01010.'},
+  {name: 'data i', wave: 'x.....'},
+
+],
+head:{
+   text:'Load inputs with 0101',
+   tick:0,
+   every:1
+ }}
+
