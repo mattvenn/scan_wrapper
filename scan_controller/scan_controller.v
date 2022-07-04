@@ -32,8 +32,8 @@ module scan_controller (
     localparam LATCH = 4;
                     
 
+    // reg
     reg [8:0] current_design;
-    wire [8:0] active_select_rev = NUM_DESIGNS - 1 - active_select;
     reg [2:0] state;
     reg [3:0] num_io;
     reg scan_clk_r;
@@ -43,42 +43,47 @@ module scan_controller (
     reg [7:0] outputs_r;
     reg [7:0] output_buf;
 
+    // wires
     assign outputs = outputs_r;
-    
+    wire [8:0] active_select_rev = NUM_DESIGNS - 1 - active_select;
     assign ready = state == START;
-
     assign scan_latch_enable = state == LATCH;
     assign scan_clk = scan_clk_r;
     assign scan_data_out = (state == LOAD && current_design == active_select_rev ) ? inputs_r[NUM_IOS-1-num_io] : 0;
     assign scan_select = scan_select_out_r;
 
-
     /*
 
-    load
-    ====
-    scan sel  = 0
-    latch en  = 0
-    clk       = 0 1 0 ..
-    data      = x x x ..
+    LOAD
 
-    apply inputs
-    ============
-    scan sel  = 0
-    latch en  = 0 1 0
-    clk       = 0 0 0
-    data      = x
+             ┌──┐  ┌──┐  ┌──┐  ┌──┐              
+    clk    : ┘  └──┘  └──┘  └──┘  └──────────────
+             ┐                                   
+    scan en: └───────────────────────────────────
+             ┐                       ┌─────┐     
+    latch  : └───────────────────────┘     └─────
+             ┐     ┌─────┐     ┌─────┐           
+    data o : └─────┘     └─────┘     └───────────
+             xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+    data i : xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
-    
-    read outputs
-    ============
-    scan sel  = 1 0 1
-    latch en  = 0
-    clk       = 0 1 0 1 0 1 ..
-    data out  = . . . x x x ..
+
+    READ
+
+             ┌──┐  ┌──┐  ┌──┐  ┌──┐  ┌──┐  ┌──┐  
+    clk    : ┘  └──┘  └──┘  └──┘  └──┘  └──┘  └──
+             ┐     ┌─────┐                       
+    scan en: └─────┘     └───────────────────────
+             ┐                                   
+    latch  : └───────────────────────────────────
+             xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+    data o : xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+             ┐           ┌─────┐     ┌─────┐     
+    data i : └───────────┘     └─────┘     └─────
 
     */
 
+    // FSM
     always @(posedge clk) begin
         if(reset) begin
             current_design <= 0;
@@ -142,7 +147,5 @@ module scan_controller (
             endcase
         end
     end
-        
-
 
 endmodule
