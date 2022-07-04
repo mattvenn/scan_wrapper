@@ -95,7 +95,7 @@ module scan_controller (
                     inputs_r <= inputs;
                     outputs_r <= output_buf;
                     current_design <= 0;
-                    scan_select_out_r <= 1;
+                    scan_select_out_r <= 0;
                 end
 
                 LOAD: begin
@@ -117,11 +117,11 @@ module scan_controller (
                 LATCH: begin
                     state <= READ;
                     current_design <= 0;
-                    scan_select_out_r <= 0;
+                    scan_select_out_r <= 1;
                 end
             
                 READ: begin
-                    scan_select_out_r <= 1;
+                    scan_select_out_r <= 0;
                     scan_clk_r <= ~scan_clk_r;
                     if(scan_clk_r) begin
                         num_io <= num_io + 1;

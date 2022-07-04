@@ -19,7 +19,7 @@ async def scan_clock(dut, cycles=1):
 
 async def preload(dut):
     # prepare for loading the scan chain
-    dut.scan_select_in.value = 1
+    dut.scan_select_in.value = 0
     dut.latch_enable_in.value = 0
     #dut.data_in.value = 0
     await scan_clock(dut, 1) 
@@ -33,11 +33,11 @@ async def latch(dut):
 async def capture_data(dut):
     # capture the module's output into the scan chain
     data = []
-    dut.scan_select_in.value = 0
+    dut.scan_select_in.value = 1
     await scan_clock(dut, 1) 
 
     # dump the data out of the chain
-    dut.scan_select_in.value = 1
+    dut.scan_select_in.value = 0
     for i in range(8):
         await scan_clock(dut, 1) 
         data.append(dut.data_out.value)

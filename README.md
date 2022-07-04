@@ -23,6 +23,10 @@ This trace shows loading 8 ins, then capturing 8 outs.
 
 # logs
 
+# Mon  4 Jul 15:34:28 CEST 2022
+
+* fix scan select to match the pics
+
 # Thu 30 Jun 15:34:41 CEST 2022
 
 * scan controller is working with the tests, hardens to 230 x 100 which fits nicely in the corner taking 2 tiles

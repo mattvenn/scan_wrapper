@@ -51,8 +51,8 @@ module scan_wrapper_lesson_1 (
     `ifndef FORMAL_COMPAT
     sky130_fd_sc_hd__sdfxtp_1 scan_flop [NUM_IOS-1:0] (
         .CLK        (clk), 
-        .D          (module_data_out),
-        .SCD        (scan_data_in),
+        .D          (scan_data_in),
+        .SCD        (module_data_out),
         .SCE        (scan_select_in),
         .Q          (scan_data_out),
         .VPWR       (1'b1),
@@ -123,8 +123,8 @@ module scan_wrapper_lesson_2 (
     `ifndef FORMAL_COMPAT
     sky130_fd_sc_hd__sdfxtp_1 scan_flop [NUM_IOS-1:0] (
         .CLK        (clk), 
-        .D          (module_data_out),
-        .SCD        (scan_data_in),
+        .D          (scan_data_in),
+        .SCD        (module_data_out),
         .SCE        (scan_select_in),
         .Q          (scan_data_out),
         .VPWR       (1'b1),
@@ -195,8 +195,8 @@ module scan_wrapper_lesson_3 (
     `ifndef FORMAL_COMPAT
     sky130_fd_sc_hd__sdfxtp_1 scan_flop [NUM_IOS-1:0] (
         .CLK        (clk), 
-        .D          (module_data_out),
-        .SCD        (scan_data_in),
+        .D          (scan_data_in),
+        .SCD        (module_data_out),
         .SCE        (scan_select_in),
         .Q          (scan_data_out),
         .VPWR       (1'b1),
@@ -267,8 +267,8 @@ module scan_wrapper_lesson_4 (
     `ifndef FORMAL_COMPAT
     sky130_fd_sc_hd__sdfxtp_1 scan_flop [NUM_IOS-1:0] (
         .CLK        (clk), 
-        .D          (module_data_out),
-        .SCD        (scan_data_in),
+        .D          (scan_data_in),
+        .SCD        (module_data_out),
         .SCE        (scan_select_in),
         .Q          (scan_data_out),
         .VPWR       (1'b1),
